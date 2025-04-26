@@ -54,5 +54,5 @@ build/
 .dist/
 .dart_tool/
 .idea/
-.metadata/
+.metadata.log/
 hnapp.iml/
