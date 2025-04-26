@@ -1,1 +1,1 @@
-#ToDoList : L'appliation todolist est une application pour creer une list de chose. 
+QSafe: C'est une application qui a pour but de pouvoir scanner, d'extraire les liens et de verifier leurs securité via VirusTotal.Avec un systeme d'authentification et de gestion de favorie cette appliation sera concue pour fonctionner Offline/Online. Nb: Base de donnée gerer en locale avec Firebase. 
