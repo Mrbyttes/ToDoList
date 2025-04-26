@@ -26,6 +26,15 @@ class LaBarreDuHaut extends StatelessWidget implements PreferredSizeWidget {
             print("Bouton à droite pressé !");
           },
         ),
+        IconButton(
+            onPressed: () {
+              // Juste un exemple d'action
+              print("Bouton Paramettre");
+            },
+            icon: Icon(
+              Icons.settings,
+              color: Colors.white,
+            ))
       ],
       centerTitle: true,
       backgroundColor: Colors.blue,
