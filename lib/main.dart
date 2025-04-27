@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hnapp/HomePage.dart';
+import 'package:hnapp/start_a.dart';
 
 void main() {
   runApp(App());
@@ -10,7 +10,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "QSafe",
-      home: HomePage(),
+      home: const Demarrage(),
     );
   }
 }

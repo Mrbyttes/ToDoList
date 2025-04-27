@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hnapp/main.dart';
 
 class HomePage extends StatelessWidget {
   // La page d'accueil avec la barre du haut et le corps vide
@@ -23,7 +22,7 @@ class LaBarreDuHaut extends StatelessWidget implements PreferredSizeWidget {
           ),
           onPressed: () {
             // Juste un exemple d'action
-            print("Bouton à droite pressé !");
+            print("Authentification");
           },
         ),
         IconButton(
@@ -57,8 +56,8 @@ class CorpDePage extends StatelessWidget {
           print("Historique");
         },
         icon: Icon(Icons.preview),
-        iconSize: 50,
-        color: Colors.blue,
+        iconSize: 80,
+        color: Colors.black45,
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -68,15 +67,15 @@ class CorpDePage extends StatelessWidget {
               print("galery");
             },
             icon: Icon(Icons.photo_library),
-            iconSize: 50,
-            color: Colors.blue,
+            iconSize: 85,
+            color: Colors.green,
           ),
           IconButton(
             onPressed: () {
               print("Appareil photo");
             },
             icon: Icon(Icons.photo_camera),
-            iconSize: 50,
+            iconSize: 85,
             color: Colors.blue,
           ),
         ],
