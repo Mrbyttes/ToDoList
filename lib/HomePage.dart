@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hnapp/Settings.dart';
 
 class HomePage extends StatelessWidget {
   // La page d'accueil avec la barre du haut et le corps vide
@@ -27,8 +28,10 @@ class LaBarreDuHaut extends StatelessWidget implements PreferredSizeWidget {
         ),
         IconButton(
             onPressed: () {
-              // Juste un exemple d'action
-              print("Bouton Paramettre");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => settings()),
+              );
             },
             icon: Icon(
               Icons.settings,
