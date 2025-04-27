@@ -15,6 +15,7 @@ class LaBarreDuHaut extends StatelessWidget implements PreferredSizeWidget {
   // La barre du haut avec le titre et le bouton à droite
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Color.fromARGB(255, 7, 78, 119),
       actions: [
         IconButton(
           icon: Icon(
@@ -27,20 +28,31 @@ class LaBarreDuHaut extends StatelessWidget implements PreferredSizeWidget {
           },
         ),
         IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => settings()),
-              );
-            },
-            icon: Icon(
-              Icons.settings,
-              color: Colors.white,
-            ))
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => settings()),
+            );
+          },
+          icon: Icon(
+            Icons.settings,
+            color: Colors.white,
+          ),
+        )
       ],
       centerTitle: true,
-      backgroundColor: Colors.blue,
-      title: Text("QSafe"),
+      title: Text(
+        "QSafe",
+        style:
+            TextStyle(color: const Color.fromARGB(200, 0, 0, 0), fontSize: 20),
+      ),
+      leading: IconButton(
+        icon: Icon(Icons.menu, color: Colors.white),
+        onPressed: () {
+          // Action à effectuer lors du clic sur l'icône de menu
+          print("Menu cliqué");
+        },
+      ),
     );
   }
 
@@ -52,37 +64,47 @@ class CorpDePage extends StatelessWidget {
   Widget build(BuildContext context) {
     // Gross conteneur pour le corps de la page
     return Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/Qr.png'),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+              Colors.white.withOpacity(1),
+              BlendMode.dstATop,
+            ),
+          ),
+        ),
         //Alignement du corps de la page
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-      IconButton(
-        onPressed: () {
-          print("Historique");
-        },
-        icon: Icon(Icons.preview),
-        iconSize: 80,
-        color: Colors.black45,
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
           IconButton(
             onPressed: () {
-              print("galery");
+              print("Historique");
             },
-            icon: Icon(Icons.photo_library),
-            iconSize: 85,
-            color: Colors.green,
+            icon: Icon(Icons.preview),
+            iconSize: 70,
+            color: Colors.black45,
           ),
-          IconButton(
-            onPressed: () {
-              print("Appareil photo");
-            },
-            icon: Icon(Icons.photo_camera),
-            iconSize: 85,
-            color: Colors.blue,
-          ),
-        ],
-      )
-    ]));
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                onPressed: () {
+                  print("galery");
+                },
+                icon: Icon(Icons.photo_library),
+                iconSize: 85,
+                color: Colors.green,
+              ),
+              IconButton(
+                onPressed: () {
+                  print("Appareil photo");
+                },
+                icon: Icon(Icons.photo_camera),
+                iconSize: 85,
+                color: Colors.blue,
+              ),
+            ],
+          )
+        ]));
   }
 }
