@@ -6,7 +6,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: LaBarreDuHaut(),
-      body: Container(),
+      body: Center(child: CorpDePage()),
     );
   }
 }
@@ -44,4 +44,43 @@ class LaBarreDuHaut extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
+}
+
+class CorpDePage extends StatelessWidget {
+  Widget build(BuildContext context) {
+    // Gross conteneur pour le corps de la page
+    return Container(
+        //Alignement du corps de la page
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      IconButton(
+        onPressed: () {
+          print("Historique");
+        },
+        icon: Icon(Icons.preview),
+        iconSize: 50,
+        color: Colors.blue,
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          IconButton(
+            onPressed: () {
+              print("galery");
+            },
+            icon: Icon(Icons.photo_library),
+            iconSize: 50,
+            color: Colors.blue,
+          ),
+          IconButton(
+            onPressed: () {
+              print("Appareil photo");
+            },
+            icon: Icon(Icons.photo_camera),
+            iconSize: 50,
+            color: Colors.blue,
+          ),
+        ],
+      )
+    ]));
+  }
 }

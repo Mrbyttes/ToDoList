@@ -53,6 +53,7 @@ test/
 build/
 .dist/
 .dart_tool/
-.idea/
-.metadata.log/
+.idea
+.metadata
 hnapp.iml/
+.gitignore
