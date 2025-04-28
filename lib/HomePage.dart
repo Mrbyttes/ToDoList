@@ -104,6 +104,8 @@ class CorpDePage extends StatelessWidget {
   Widget build(BuildContext context) {
     // Gross conteneur pour le corps de la page
     return Container(
+        width: MediaQuery.of(context).size.width, // Largeur de l'écran
+        height: MediaQuery.of(context).size.height, // Hauteur de l'écran
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/Qr.png'),
@@ -115,36 +117,73 @@ class CorpDePage extends StatelessWidget {
           ),
         ),
         //Alignement du corps de la page
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          IconButton(
-            onPressed: () {
-              print("Historique");
-            },
-            icon: Icon(Icons.preview),
-            iconSize: 60,
-            color: Colors.black45,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                onPressed: () {
-                  print("galery");
-                },
-                icon: Icon(Icons.photo_library),
-                iconSize: 60,
-                color: Colors.green,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(height: 20),
+            Text(
+              "Bienvenue dans QSafe",
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
               ),
-              IconButton(
-                onPressed: () {
-                  print("Appareil photo");
-                },
-                icon: Icon(Icons.photo_camera),
-                iconSize: 60,
-                color: Colors.blue,
+            ),
+            SizedBox(height: 50),
+            ElevatedButton(
+              onPressed: () {
+                // Action à effectuer lors du clic sur le bouton
+                print("Bouton scanner un QR Code cliqué");
+              },
+              child: Text("Scanner un QR Code"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color.fromARGB(255, 7, 78, 119),
+                foregroundColor: Colors.white,
+                shadowColor: Color.fromARGB(255, 7, 78, 119),
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                textStyle: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ],
-          )
-        ]));
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Action à effectuer lors du clic sur le bouton
+                print("Bouton séléctionner de la galerie cliqué");
+              },
+              child: Text("Séléctionner de la galerie"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color.fromARGB(255, 7, 78, 119),
+                foregroundColor: Colors.white,
+                shadowColor: Color.fromARGB(255, 7, 78, 119),
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                textStyle: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Action à effectuer lors du clic sur le bouton
+                print("Bouton genérer QR Code cliqué");
+              },
+              child: Text("Générer un QR Code"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color.fromARGB(255, 7, 78, 119),
+                foregroundColor: Colors.white,
+                shadowColor: Color.fromARGB(255, 7, 78, 119),
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                textStyle: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+        ));
   }
 }

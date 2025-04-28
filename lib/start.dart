@@ -19,16 +19,24 @@ class _Demarrage extends State<Demarrage> with SingleTickerProviderStateMixin {
 
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: Text(
-        "QSafe",
+        body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      SizedBox(height: 20),
+      Text(
+        "Monkey Lab Studio",
         style: TextStyle(
+          fontFamily: 'Lobster',
           fontSize: 50,
           fontWeight: FontWeight.bold,
           color: Colors.blue,
         ),
         textAlign: TextAlign.center,
       ),
-    ));
+      SizedBox(height: 20),
+      Image.asset(
+        'assets/MonkeyLab.png',
+        width: 200,
+        height: 200,
+      ),
+    ]));
   }
 }
