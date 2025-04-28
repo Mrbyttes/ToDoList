@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hnapp/Settings.dart';
+import 'package:hnapp/Authentification.dart';
 
 class HomePage extends StatelessWidget {
   // La page d'accueil avec la barre du haut et le corps vide
@@ -23,8 +24,10 @@ class LaBarreDuHaut extends StatelessWidget implements PreferredSizeWidget {
             color: Colors.white,
           ),
           onPressed: () {
-            // Juste un exemple d'action
-            print("Authentification");
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Authentification()),
+            );
           },
         ),
         IconButton(
@@ -46,12 +49,49 @@ class LaBarreDuHaut extends StatelessWidget implements PreferredSizeWidget {
         style:
             TextStyle(color: const Color.fromARGB(200, 0, 0, 0), fontSize: 20),
       ),
-      leading: IconButton(
-        icon: Icon(Icons.menu, color: Colors.white),
-        onPressed: () {
-          // Action à effectuer lors du clic sur l'icône de menu
-          print("Menu cliqué");
+      leading: PopupMenuButton<int>(
+        icon: Icon(Icons.menu, color: Colors.white), // Icône du menu
+        onSelected: (value) {
+          if (value == 1) {
+            print("Historique sélectionné");
+          } else if (value == 2) {
+            print("Galerie sélectionnée");
+          } else if (value == 3) {
+            print("Appareil photo sélectionné");
+          }
         },
+        itemBuilder: (context) => [
+          PopupMenuItem(
+            value: 1,
+            child: Row(
+              children: [
+                Icon(Icons.preview, color: Colors.black45),
+                SizedBox(width: 10),
+                Text("Historique"),
+              ],
+            ),
+          ),
+          PopupMenuItem(
+            value: 2,
+            child: Row(
+              children: [
+                Icon(Icons.photo_library, color: Colors.green),
+                SizedBox(width: 10),
+                Text("Galerie"),
+              ],
+            ),
+          ),
+          PopupMenuItem(
+            value: 3,
+            child: Row(
+              children: [
+                Icon(Icons.photo_camera, color: Colors.blue),
+                SizedBox(width: 10),
+                Text("Appareil photo"),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -81,7 +121,7 @@ class CorpDePage extends StatelessWidget {
               print("Historique");
             },
             icon: Icon(Icons.preview),
-            iconSize: 70,
+            iconSize: 60,
             color: Colors.black45,
           ),
           Row(
@@ -92,7 +132,7 @@ class CorpDePage extends StatelessWidget {
                   print("galery");
                 },
                 icon: Icon(Icons.photo_library),
-                iconSize: 85,
+                iconSize: 60,
                 color: Colors.green,
               ),
               IconButton(
@@ -100,7 +140,7 @@ class CorpDePage extends StatelessWidget {
                   print("Appareil photo");
                 },
                 icon: Icon(Icons.photo_camera),
-                iconSize: 85,
+                iconSize: 60,
                 color: Colors.blue,
               ),
             ],
