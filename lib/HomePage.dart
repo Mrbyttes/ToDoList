@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hnapp/Settings.dart';
-import 'package:hnapp/Authentification.dart';
+import 'package:qsafe/Settings.dart';
+import 'package:qsafe/Authentification.dart';
+import 'package:qsafe/scanner_Qr.dart';
 
 class HomePage extends StatelessWidget {
   // La page d'accueil avec la barre du haut et le corps vide
@@ -81,16 +82,6 @@ class LaBarreDuHaut extends StatelessWidget implements PreferredSizeWidget {
               ],
             ),
           ),
-          PopupMenuItem(
-            value: 3,
-            child: Row(
-              children: [
-                Icon(Icons.photo_camera, color: Colors.blue),
-                SizedBox(width: 10),
-                Text("Appareil photo"),
-              ],
-            ),
-          ),
         ],
       ),
     );
@@ -118,9 +109,8 @@ class CorpDePage extends StatelessWidget {
         ),
         //Alignement du corps de la page
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 20),
+            SizedBox(height: 50),
             Text(
               "Bienvenue dans QSafe",
               style: TextStyle(
@@ -129,11 +119,13 @@ class CorpDePage extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
-            SizedBox(height: 50),
+            SizedBox(height: 130),
             ElevatedButton(
               onPressed: () {
-                // Action à effectuer lors du clic sur le bouton
-                print("Bouton scanner un QR Code cliqué");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => QRCodeScannerPage()),
+                );
               },
               child: Text("Scanner un QR Code"),
               style: ElevatedButton.styleFrom(

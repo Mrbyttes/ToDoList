@@ -4,29 +4,17 @@ class settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Paramètres"),
-        centerTitle: true,
-        backgroundColor: Colors.blue,
-      ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            IconButton(
-              icon: Icon(Icons.settings),
-              iconSize: 80,
-              color: Colors.black45,
-              onPressed: () {
-                // Action à effectuer lors du clic sur l'icône
-                print("Paramètres cliqués");
-              },
-            ),
-            SizedBox(height: 20),
             Text(
-              "Paramètres de l'application",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              "Paramètres",
+              style: TextStyle(
+                  fontSize: 24,
+                  color: Color.fromARGB(255, 7, 78, 119).withOpacity(0.8)),
+              textAlign: TextAlign.start,
             ),
+            SizedBox(height: 50),
           ],
         ),
       ),
